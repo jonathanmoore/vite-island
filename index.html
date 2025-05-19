@@ -9,16 +9,35 @@
   <body class="bg-zinc-950">
     <div class="max-w-screen overflow-x-hidden">
       <div
-        class="relative mx-auto grid min-h-dvh max-w-7xl grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)] border border-zinc-400/10 text-white [--gutter-width:3rem]"
+        class="relative mx-auto grid min-h-dvh max-w-7xl grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)] border border-zinc-400/10 text-white [--gutter-width:1rem] md:[--gutter-width:3rem]"
       >
         <div class="gutter"></div>
         <div class="relative border border-zinc-400/10 py-12">
           <section
+            class="relative z-10 before:absolute before:top-0 before:-left-[100vw] before:block before:h-px before:w-[200vw] before:bg-zinc-900 after:absolute after:bottom-0 after:-left-[100vw] after:block after:h-px after:w-[200vw] after:bg-zinc-900"
+          >
+            <div
+              class="relative flex aspect-[10/4] h-full w-full flex-col items-center justify-center rounded-xl bg-zinc-800"
+            >
+              <h1
+                class="relative z-10 w-full bg-zinc-900/40 py-4 text-center text-base font-light tracking-[1.25rem] text-white uppercase before:absolute before:top-0 before:-left-[100vw] before:block before:h-px before:w-[200vw] before:bg-zinc-300/10 after:absolute after:bottom-0 after:-left-[100vw] after:block after:h-px after:w-[200vw] after:bg-zinc-300/10 md:text-4xl md:tracking-[2rem]"
+              >
+                Vite Island
+              </h1>
+              <img
+                src="/vite-island.jpg"
+                alt="Vite Island Preview"
+                class="absolute inset-0 h-full w-full rounded-xl object-cover"
+              />
+            </div>
+          </section>
+
+          <section
             class="relative z-10 p-6 before:absolute before:top-0 before:-left-[100vw] before:block before:h-px before:w-[200vw] before:bg-zinc-900 after:absolute after:bottom-0 after:-left-[100vw] after:block after:h-px after:w-[200vw] after:bg-zinc-900"
           >
-            <div class="py-40">
+            <div class="py-24">
               <h2
-                class="mx-auto mb-6 max-w-2xl text-center text-7xl font-extrabold"
+                class="mx-auto mb-6 max-w-lg text-center text-5xl font-extrabold"
               >
                 Build Modern Websites, Simply
               </h2>
@@ -71,7 +90,7 @@
               </click-count>
             </div>
 
-            <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
               <div
                 class="flex flex-col justify-center gap-6 rounded-lg bg-zinc-900/60 px-6 py-12"
               >
@@ -184,59 +203,6 @@
         </div>
         <div class="gutter"></div>
       </div>
-    </div>
-
-    <div class="container mx-auto px-4 py-8">
-      <header class="mb-8">
-        <h1 class="font-display text-3xl font-extrabold text-gray-800">
-          Islands Architecture Demo
-        </h1>
-        <p class="text-gray-600">Simple web components with Tailwind CSS v4</p>
-      </header>
-
-      <main>
-        <section class="mb-12">
-          <h2 class="font-display mb-4 text-2xl font-semibold">
-            Basic Counter Component
-          </h2>
-
-          <click-counter class="block rounded-lg bg-white p-6 shadow-md">
-            <h3 class="font-display mb-4 text-xl font-bold">Click Counter</h3>
-            <button
-              class="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 active:bg-blue-700"
-            >
-              Click me!
-            </button>
-            <div class="mt-4">
-              <p class="font-mono">
-                Button clicked <span data-counter>0</span> times
-              </p>
-            </div>
-          </click-counter>
-
-          <div class="mt-8">
-            <h3 class="font-display mb-4 text-xl font-medium">
-              Lazy Loaded Counter - mobile only
-            </h3>
-            <click-counter
-              client:media="(max-width: 767px)"
-              class="block rounded-lg bg-white p-6 shadow-md md:pointer-events-none md:opacity-50"
-            >
-              <h3 class="font-display mb-4 text-xl font-bold">
-                Mobile Click Counter
-              </h3>
-              <button
-                class="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 active:bg-blue-700"
-              >
-                Click me!
-              </button>
-              <div class="mt-4">
-                <p>Button clicked <span data-counter>0</span> times</p>
-              </div>
-            </click-counter>
-          </div>
-        </section>
-      </main>
     </div>
 
     <script type="module" src="/src/main.js"></script>
