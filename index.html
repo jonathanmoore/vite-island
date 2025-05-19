@@ -32,6 +32,7 @@
               <click-count
                 class="mb-8 flex flex-col items-center justify-center gap-2"
                 data-active="false"
+                data-counting="false"
               >
                 <button
                   class="group relative rounded-full border-t-[1px] border-b-[1px] border-t-zinc-600/50 border-b-zinc-950 bg-gradient-to-b from-zinc-800 via-black to-zinc-900 px-7 py-3 text-lg font-medium text-white shadow-[0_4px_15px_rgba(0,0,0,0.6),0_8px_30px_rgba(0,0,0,0.4)] transition-[border,shadow,transform] duration-200 ease-out before:absolute before:inset-[1px] before:rounded-full before:bg-gradient-to-b before:from-zinc-800/90 before:via-black before:to-black before:opacity-90 after:absolute after:inset-0 after:rounded-full after:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),inset_0_-1px_1px_rgba(0,0,0,0.8)] hover:border-t-zinc-950 hover:border-b-zinc-950 hover:shadow-[0_4px_15px_rgba(0,0,0,0.6),0_8px_40px_rgba(0,0,0,0.6),0_0_80px_rgba(0,0,0,0.3)] hover:before:from-zinc-700/90 hover:after:shadow-[inset_0_1px_2px_rgba(255,255,255,0.2),inset_0_-1px_1px_rgba(0,0,0,0.8)] focus:outline-none active:shadow-[0_2px_10px_rgba(0,0,0,0.7)] active:before:from-zinc-800/95 active:after:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),inset_0_-1px_1px_rgba(0,0,0,0.9)]"
@@ -45,10 +46,10 @@
                 >
                   <span class="relative flex size-2">
                     <span
-                      class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"
+                      class="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75 transition-colors duration-300 [[data-counting='false']_&]:bg-green-400 [[data-counting='true']_&]:bg-orange-400"
                     ></span>
                     <span
-                      class="relative inline-flex h-full w-full rounded-full bg-green-400"
+                      class="relative inline-flex h-full w-full rounded-full transition-colors duration-300 [[data-counting='false']_&]:bg-green-400 [[data-counting='true']_&]:bg-orange-400"
                     ></span>
                   </span>
 
@@ -57,7 +58,7 @@
                   >
                     <span
                       data-activated-text
-                      class="inline-block whitespace-nowrap"
+                      class="inline-block whitespace-nowrap transition-colors duration-300 [[data-counting='false']_&]:text-zinc-300 [[data-counting='true']_&]:text-orange-400"
                       >Activated</span
                     >
                     <span
