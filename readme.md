@@ -1,10 +1,10 @@
-# Vite Islands Architecture
+# Vite Island Architecture
 
 A lightweight, modern boilerplate implementing the islands architecture pattern with Vite and vanilla JavaScript.
 
-## What is Islands Architecture?
+## What is Island Architecture?
 
-Islands architecture is a pattern where your page consists of mostly static HTML with isolated "islands" of interactivity. This approach:
+Island architecture is a pattern where your page consists of mostly static HTML with isolated "islands" of interactivity. This approach:
 
 - Provides excellent page load performance
 - Delivers a complete experience even before JavaScript loads
