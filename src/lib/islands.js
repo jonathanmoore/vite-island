@@ -4,7 +4,7 @@ function media({ query }) {
     if (mediaQuery.matches) {
       resolve(true);
     } else {
-      mediaQuery.addEventListener('change', resolve, { once: true });
+      mediaQuery.addEventListener("change", resolve, { once: true });
     }
   });
 }
@@ -26,7 +26,7 @@ function visible({ element }) {
 
 function idle() {
   return new Promise(function (resolve) {
-    if ('requestIdleCallback' in window) {
+    if ("requestIdleCallback" in window) {
       window.requestIdleCallback(resolve);
     } else {
       setTimeout(resolve, 200);
@@ -36,9 +36,9 @@ function idle() {
 
 // Get all island components
 const islandModules = import.meta.glob([
-  '/src/islands/*.js',
-  '/src/islands/*/index.js',
-  '/src/islands/*/*.js',
+  "/src/islands/*.js",
+  "/src/islands/*/index.js",
+  "/src/islands/*/*.js",
 ]);
 
 // Track processed components
@@ -59,7 +59,7 @@ export function revive() {
     const tagName = node.tagName.toLowerCase();
 
     // Check if it's a custom element that hasn't been processed
-    if (tagName.includes('-') && !processedComponents.has(tagName)) {
+    if (tagName.includes("-") && !processedComponents.has(tagName)) {
       // Possible paths for the component
       const possiblePaths = [
         `/src/islands/${tagName}.js`,
@@ -81,16 +81,16 @@ export function revive() {
         processedComponents.add(tagName);
 
         // Check loading conditions
-        if (node.hasAttribute('client:visible')) {
+        if (node.hasAttribute("client:visible")) {
           await visible({ element: node });
         }
 
-        const clientMedia = node.getAttribute('client:media');
+        const clientMedia = node.getAttribute("client:media");
         if (clientMedia) {
           await media({ query: clientMedia });
         }
 
-        if (node.hasAttribute('client:idle')) {
+        if (node.hasAttribute("client:idle")) {
           await idle();
         }
 

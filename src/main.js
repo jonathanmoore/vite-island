@@ -1,5 +1,4 @@
-import './style.css';
-import { revive } from './lib/islands.js';
+import { revive } from "./lib/islands.js";
 
-console.log('Main.js loaded');
+console.log("Main.js loaded");
 revive();

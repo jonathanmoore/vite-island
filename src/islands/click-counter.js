@@ -2,12 +2,13 @@ class ClickCounter extends HTMLElement {
   constructor() {
     super();
     this.count = 0;
+    console.log("ClickCounter loaded", this);
   }
 
   connectedCallback() {
     // Find elements within the component
-    this.buttonElement = this.querySelector('button');
-    this.counterElement = this.querySelector('[data-counter]');
+    this.buttonElement = this.querySelector("button");
+    this.counterElement = this.querySelector("[data-counter]");
 
     // Set initial state if counter element exists
     if (this.counterElement) {
@@ -20,7 +21,7 @@ class ClickCounter extends HTMLElement {
 
   attachEvents() {
     if (this.buttonElement) {
-      this.buttonElement.addEventListener('click', () => {
+      this.buttonElement.addEventListener("click", () => {
         this.count++;
 
         // Update counter display
@@ -30,10 +31,10 @@ class ClickCounter extends HTMLElement {
 
         // Dispatch a custom event
         this.dispatchEvent(
-          new CustomEvent('counter-updated', {
+          new CustomEvent("counter-updated", {
             detail: { count: this.count },
             bubbles: true,
-          })
+          }),
         );
       });
     }
@@ -43,7 +44,7 @@ class ClickCounter extends HTMLElement {
   resetCounter() {
     this.count = 0;
     if (this.counterElement) {
-      this.counterElement.textContent = '0';
+      this.counterElement.textContent = "0";
     }
     return this.count;
   }
@@ -55,7 +56,7 @@ class ClickCounter extends HTMLElement {
 }
 
 // Register the component if not already registered
-if (!customElements.get('click-counter')) {
-  customElements.define('click-counter', ClickCounter);
-  console.log('click-counter component registered');
+if (!customElements.get("click-counter")) {
+  customElements.define("click-counter", ClickCounter);
+  console.log("click-counter component registered");
 }

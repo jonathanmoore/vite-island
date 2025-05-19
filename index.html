@@ -1,15 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Islands Architecture Demo</title>
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
-  <body class="bg-gray-50 min-h-screen">
+  <body class="bg-zinc-950">
+    <div class="max-w-screen overflow-x-hidden">
+      <div
+        class="relative mx-auto grid min-h-dvh max-w-7xl grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)] border border-zinc-400/10 text-white [--gutter-width:3rem]"
+      >
+        <div class="gutter"></div>
+        <div class="relative border border-zinc-400/10 py-12">
+          <section
+            class="relative z-10 p-6 before:absolute before:top-0 before:-left-[100vw] before:block before:h-px before:w-[200vw] before:bg-zinc-900 after:absolute after:bottom-0 after:-left-[100vw] after:block after:h-px after:w-[200vw] after:bg-zinc-900"
+          >
+            <div class="py-40">
+              <h2
+                class="mx-auto mb-6 max-w-2xl text-center text-7xl font-extrabold"
+              >
+                Build Modern Websites, Simply
+              </h2>
+              <p
+                class="mx-auto mb-8 max-w-md text-center text-xl font-medium text-slate-300"
+              >
+                Lightweight frontend approach that loads only what you need,
+                when you need it
+              </p>
+
+              <click-count
+                class="mb-8 flex flex-col items-center justify-center gap-2"
+                data-active="false"
+              >
+                <button
+                  class="group relative rounded-full border-t-[1px] border-b-[1px] border-t-zinc-600/50 border-b-zinc-950 bg-gradient-to-b from-zinc-800 via-black to-zinc-900 px-7 py-3 text-lg font-medium text-white shadow-[0_4px_15px_rgba(0,0,0,0.6),0_8px_30px_rgba(0,0,0,0.4)] transition-[border,shadow,transform] duration-200 ease-out before:absolute before:inset-[1px] before:rounded-full before:bg-gradient-to-b before:from-zinc-800/90 before:via-black before:to-black before:opacity-90 after:absolute after:inset-0 after:rounded-full after:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),inset_0_-1px_1px_rgba(0,0,0,0.8)] hover:border-t-zinc-950 hover:border-b-zinc-950 hover:shadow-[0_4px_15px_rgba(0,0,0,0.6),0_8px_40px_rgba(0,0,0,0.6),0_0_80px_rgba(0,0,0,0.3)] hover:before:from-zinc-700/90 hover:after:shadow-[inset_0_1px_2px_rgba(255,255,255,0.2),inset_0_-1px_1px_rgba(0,0,0,0.8)] focus:outline-none active:shadow-[0_2px_10px_rgba(0,0,0,0.7)] active:before:from-zinc-800/95 active:after:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),inset_0_-1px_1px_rgba(0,0,0,0.9)]"
+                >
+                  <span class="relative z-10 text-base font-bold"
+                    >Get Started</span
+                  >
+                </button>
+                <span
+                  class="relative z-20 flex items-center gap-2 transition-opacity duration-500 data-[active=false]:opacity-0 data-[active=true]:opacity-100"
+                >
+                  <span class="relative flex size-2">
+                    <span
+                      class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"
+                    ></span>
+                    <span
+                      class="relative inline-flex h-full w-full rounded-full bg-green-400"
+                    ></span>
+                  </span>
+
+                  <span
+                    class="inline-flex items-center gap-1 font-mono text-xs text-zinc-300 uppercase"
+                  >
+                    <span
+                      data-activated-text
+                      class="inline-block whitespace-nowrap"
+                      >Activated</span
+                    >
+                    <span
+                      data-click-count
+                      class="inline-block min-w-[1.25em] text-center"
+                      >00</span
+                    >
+                  </span>
+                </span>
+              </click-count>
+            </div>
+
+            <div
+              class="grid grid-cols-1 gap-4 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-2"
+            >
+              <!-- Top row: 2 across on md+, 1 full width on mobile -->
+              <div
+                class="flex flex-col justify-center rounded-lg bg-zinc-900/60 p-6 md:col-span-1 lg:col-span-2"
+              >
+                <span class="font-semibold">Islands Architecture:</span>
+                <span
+                  >Interactive components that work independently for faster
+                  pages.</span
+                >
+              </div>
+              <div
+                class="flex flex-col justify-center rounded-lg bg-zinc-900/60 p-6 md:col-span-1 lg:col-span-1"
+              >
+                <span class="font-semibold">Powered by Vite:</span>
+                <span
+                  >Lightning-fast development with instant server start and hot
+                  module replacement.</span
+                >
+              </div>
+              <!-- Bottom row: 3 across on lg, 2 across on md, stacked on mobile -->
+              <div
+                class="flex flex-col justify-center rounded-lg bg-zinc-900/60 p-6 md:col-span-1 lg:col-span-1"
+              >
+                <span class="font-semibold">Simple Styling:</span>
+                <span
+                  >Tailwind CSS v4 for quick, consistent design without
+                  complexity.</span
+                >
+              </div>
+              <div
+                class="flex flex-col justify-center rounded-lg bg-zinc-900/60 p-6 md:col-span-1 lg:col-span-1"
+              >
+                <span class="font-semibold">Vanilla JavaScript:</span>
+                <span
+                  >Pure JS without frameworks or unnecessary dependencies.</span
+                >
+              </div>
+              <div
+                class="flex flex-col justify-center rounded-lg bg-zinc-900/60 p-6 md:col-span-2 lg:col-span-1"
+              >
+                <span class="font-semibold">Testing Included:</span>
+                <span
+                  >Vitest integration for fast, reliable component
+                  testing.</span
+                >
+              </div>
+            </div>
+
+            <p class="mt-8 text-lg">
+              Ready to start? Create your first project in minutes.
+            </p>
+          </section>
+
+          <div
+            class="absolute inset-0 z-0 h-full w-full overflow-hidden text-zinc-400/15 before:absolute before:h-32 before:w-full before:bg-gradient-to-b before:from-zinc-950 before:to-zinc-950/0 after:absolute after:bottom-0 after:h-20 after:w-full after:bg-gradient-to-t after:from-zinc-950 after:to-zinc-950/0"
+          >
+            <svg width="100%" height="100%" class="h-full w-full">
+              <defs>
+                <pattern
+                  id="dot-pattern"
+                  width="7"
+                  height="7"
+                  patternUnits="userSpaceOnUse"
+                  fill="currentColor"
+                >
+                  <rect x="4" y="4" width="1" height="1"></rect>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#dot-pattern)"></rect>
+            </svg>
+          </div>
+        </div>
+        <div class="gutter"></div>
+      </div>
+    </div>
+
     <div class="container mx-auto px-4 py-8">
-      <!-- Using the font-display utility class for headings -->
       <header class="mb-8">
-        <h1 class="font-display text-3xl font-extrabold italic text-gray-800">
+        <h1 class="font-display text-3xl font-extrabold text-gray-800">
           Islands Architecture Demo
         </h1>
         <p class="text-gray-600">Simple web components with Tailwind CSS v4</p>
@@ -17,36 +159,37 @@
 
       <main>
         <section class="mb-12">
-          <!-- Also using font-display here -->
-          <h2 class="font-display text-2xl font-semibold mb-4">
+          <h2 class="font-display mb-4 text-2xl font-semibold">
             Basic Counter Component
           </h2>
 
-          <!-- Regular loading - HTML structure is already in the DOM -->
-          <click-counter class="block p-6 bg-white rounded-lg shadow-md">
-            <h3 class="font-display text-xl font-bold mb-4">Click Counter</h3>
+          <click-counter class="block rounded-lg bg-white p-6 shadow-md">
+            <h3 class="font-display mb-4 text-xl font-bold">Click Counter</h3>
             <button
-              class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700"
+              class="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 active:bg-blue-700"
             >
               Click me!
             </button>
             <div class="mt-4">
-              <p>Button clicked <span data-counter>0</span> times</p>
+              <p class="font-mono">
+                Button clicked <span data-counter>0</span> times
+              </p>
             </div>
           </click-counter>
 
-          <!-- Load when visible -->
           <div class="mt-8">
-            <h3 class="font-display text-xl font-medium mb-4">
-              Lazy Loaded Counter
+            <h3 class="font-display mb-4 text-xl font-medium">
+              Lazy Loaded Counter - mobile only
             </h3>
             <click-counter
-              client:visible
-              class="block p-6 bg-white rounded-lg shadow-md"
+              client:media="(max-width: 767px)"
+              class="block rounded-lg bg-white p-6 shadow-md md:pointer-events-none md:opacity-50"
             >
-              <h3 class="font-display text-xl font-bold mb-4">Click Counter</h3>
+              <h3 class="font-display mb-4 text-xl font-bold">
+                Mobile Click Counter
+              </h3>
               <button
-                class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700"
+                class="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 active:bg-blue-700"
               >
                 Click me!
               </button>
