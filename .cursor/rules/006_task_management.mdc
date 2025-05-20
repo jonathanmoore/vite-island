@@ -1,0 +1,68 @@
+---
+description: 
+globs: .ai/TASKS.md
+alwaysApply: false
+---
+# Project Tasks Management
+
+## Purpose
+
+The `.ai/TASKS.md` file serves as a working document for tracking specific implementation tasks, progress, and testing status. It breaks down the higher-level requirements from PLAN.md into actionable work items.
+
+## Structure
+
+Organize the TASKS.md file with a simple, task-oriented structure:
+
+```markdown
+# Project Tasks
+
+## In Progress
+- [ ] Task 1: Specific implementation detail
+  - [x] Subtask 1.1
+  - [ ] Subtask 1.2
+- [ ] Task 2: Another specific task
+
+## Ready for Implementation
+- [ ] Task 3: Ready to be worked on
+- [ ] Task 4: Details about what needs to be done
+
+## Completed
+- [x] Task 5: Implemented and tested 
+- [x] Task 6: Completed functionality
+
+## Test Status
+- [x] Test for Feature 1: All tests passing
+- [ ] Test for Feature 2: 3/5 tests passing
+  - Failing: test_case_name (reason for failure)
+```
+
+## Task Guidelines
+
+1. **Specificity**: Each task should be specific enough to be actionable
+2. **Scope**: Tasks should be small enough to complete in a reasonable timeframe
+3. **Dependencies**: Note any dependencies between tasks
+4. **Testing**: Link tasks to their corresponding test cases
+
+## Using Tasks for Development
+
+1. **Test-Driven Approach**:
+   - Create test cases for each task first
+   - Implement functionality to pass the tests
+   - Mark tests as passing in the Test Status section
+
+2. **Progress Tracking**:
+   - Move tasks between sections as their status changes
+   - Add completion dates to finished tasks
+   - Document any obstacles or issues directly in the task description
+
+3. **Continuous Updates**:
+   - Update the file as work progresses
+   - Add new tasks as they are identified
+   - Refine task descriptions as understanding improves
+
+## Status Indicators
+
+- `[ ]` - Not started
+- `[x]` - Completed
+- `[~]` - In progress (optional)
+- `[!]` - Blocked or has issues (optional)

@@ -1,7 +1,7 @@
 ---
 description: 
-globs: **/*
-alwaysApply: false
+globs: 
+alwaysApply: true
 ---
 # Project Structure
 
@@ -14,12 +14,29 @@ This project follows the Islands Architecture pattern, which focuses on isolated
 - `tests/`: Test files for components and utilities
 - `public/`: Static assets
 - `src/`: Other application files
+- `.ai/`: Project planning and task management
+
+## Technology Stack
+
+- **Build Tool**: Vite for fast development and optimized production builds
+- **Components**: Vanilla JavaScript Web Components (Custom Elements)
+- **Styling**: Tailwind CSS for utility-first styling
+- **Testing**: Vitest for unit and component testing
+- **Architecture**: Islands architecture for progressive enhancement
+- **No Framework**: Intentionally framework-free for simplicity and performance
+
+### Key Dependencies
+
+- Tailwind CSS v4 for styling through `@tailwindcss/vite` plugin
+- Vitest + JSDOM for component testing
 
 ## Key Files
 
 - `@src/main.js`: Application entry point that initializes island components
 - `@src/lib/islands.js`: Core loading system for island components
 - `@src/lib/utils.js`: Animation and UI utility functions
+- `@index.html`: Main HTML template with static structure
+- `@vite.config.js`: Vite configuration
 
 ## Progressive Enhancement
 

@@ -1,0 +1,53 @@
+---
+description: 
+globs: .ai/PLAN.md
+alwaysApply: false
+---
+# Project Plan Documentation
+
+## Purpose
+
+The `.ai/PLAN.md` file serves as the central document for defining project requirements, features, and overall direction. It should be concise, clear, and focus on what needs to be built rather than how to build it.
+
+## Structure
+
+Keep the PLAN.md file simple and structured as follows:
+
+```markdown
+# Project Plan
+
+## Overview
+Brief description of the project and its goals.
+
+## Core Requirements
+- Requirement 1
+- Requirement 2
+- Requirement 3
+
+## Features
+- [ ] Feature 1: Brief description
+- [ ] Feature 2: Brief description
+
+## Components
+- [ ] Component 1: What it does and key functionality
+- [ ] Component 2: What it does and key functionality
+
+## Constraints & Considerations
+- Any technical constraints
+- Design considerations
+- Performance requirements
+```
+
+## Content Guidelines
+
+1. **Be specific but concise** - Each requirement should be clear but not overly detailed
+2. **Focus on what, not how** - Describe what needs to be accomplished, not implementation details
+3. **Prioritize implicitly** - List items in order of priority or dependency
+4. **Keep it updated** - As the project evolves, update the plan to reflect current understanding
+
+## Using the Plan for Development
+
+- Reference the plan when starting new components or features
+- Use requirements from the plan to generate test cases
+- Check items off as they are completed
+- Add notes about significant decisions or changes directly in the plan
