@@ -1,0 +1,32 @@
+---
+description: 
+globs: **/*
+alwaysApply: false
+---
+# Project Structure
+
+This project follows the Islands Architecture pattern, which focuses on isolated interactive components within mostly static HTML.
+
+## Directory Organization
+
+- `src/islands/`: Web components (custom elements)
+- `src/lib/`: Utility functions, shared classes, and core code
+- `tests/`: Test files for components and utilities
+- `public/`: Static assets
+- `src/`: Other application files
+
+## Key Files
+
+- `@src/main.js`: Application entry point that initializes island components
+- `@src/lib/islands.js`: Core loading system for island components
+- `@src/lib/utils.js`: Animation and UI utility functions
+
+## Progressive Enhancement
+
+All interactive components should:
+1. Work without JavaScript first (static HTML)
+2. Be enhanced with JavaScript when loaded
+3. Support conditional loading via attributes:
+   - `client:visible`: Load when scrolled into view
+   - `client:media="(...)`: Load based on media queries
+   - `client:idle`: Load when browser is idle

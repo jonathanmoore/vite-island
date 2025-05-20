@@ -1,0 +1,36 @@
+---
+description: 
+globs: src/islands/**/*,tests/islands/**/*
+alwaysApply: false
+---
+# Component Creation Workflow
+
+## Naming Conventions
+
+- Use kebab-case for component names (e.g., `click-count.js`)
+- Use PascalCase for component classes (e.g., `class ClickCount extends HTMLElement`)
+- Name test files with `.test.js` suffix (e.g., `click-count.test.js`)
+
+## Creation Steps
+
+1. First, create the HTML structure that works without JavaScript
+2. Create the component JS file in `src/islands/`
+3. Create a corresponding test file in `tests/islands/`
+4. Add component to a page with appropriate loading directive:
+   ```html
+   <component-name client:visible>
+     <!-- Initial HTML -->
+   </component-name>
+   ```
+
+## Component Template
+
+See the `@src/islands/click-count.js` file for a reference template on:
+- State management via data attributes
+- Animation queueing
+- Event handling
+- Custom event dispatch
+
+## Integration
+
+All components are automatically discovered and registered by the `@src/lib/islands.js` system

@@ -1,0 +1,62 @@
+---
+description: 
+globs: tests/**/*
+alwaysApply: false
+---
+# Component Testing Standards
+
+## Test Organization
+
+Tests should be organized in the `/tests` directory, mirroring the structure of the source code:
+
+- `tests/islands/`: Tests for web components
+- `tests/lib/`: Tests for utility functions and shared code
+- `tests/integration/`: End-to-end and integration tests
+
+## Test File Structure
+
+Test files should follow this pattern:
+
+1. Import test utilities and mock dependencies
+2. Import the component or module under test
+3. Use describe/it blocks for test organization
+4. Clean up after each test
+
+## Common Test Cases
+
+Each component should test:
+- Initialization and rendering
+- User interactions (clicks, inputs)
+- State transitions
+- Event dispatching
+- Animation sequences
+
+## Mocking
+
+- Mock utility functions to isolate component behavior
+- Use `vi.mock()` before importing the component
+- Reset mocks between tests with `vi.clearAllMocks()`
+
+## Example Pattern
+
+```js
+// First mock dependencies
+vi.mock("../lib/utils.js");
+
+// Then import the component
+import "./component-name.js";
+
+describe("ComponentName", () => {
+  beforeEach(() => {
+    // Setup test DOM and component
+  });
+  
+  afterEach(() => {
+    // Clean up
+  });
+  
+  it("should initialize correctly", () => {
+    // Test initialization
+  });
+});
+```

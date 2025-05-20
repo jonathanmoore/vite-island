@@ -1,0 +1,55 @@
+---
+description: 
+globs: src/lib/**/*.js
+alwaysApply: false
+---
+# Utility and Shared Code Standards
+
+## Organization
+
+- `src/lib/`: Contains all utility functions and shared classes
+- Use subdirectories for grouping related utilities (e.g., `src/lib/animations/`)
+
+## Utility Functions
+
+Utility functions should:
+- Be focused on a single responsibility
+- Have clear parameter and return types
+- Include JSDoc comments for documentation
+
+```js
+/**
+ * Description of what the utility does
+ * @param {Element} element - DOM element to affect
+ * @param {Object} options - Configuration options
+ * @returns {Promise} Resolves when animation completes
+ */
+export function utilityName(element, options = {}) {
+  // Implementation
+}
+```
+
+## Broad Classes
+
+Place non-component classes in `src/lib/` when they:
+- Provide functionality used by multiple components
+- Represent core business logic
+- Implement shared behaviors or services
+
+```js
+/**
+ * Description of the class purpose
+ */
+export class SharedService {
+  constructor(options = {}) {
+    // Initialization
+  }
+  
+  // Class methods
+}
+```
+
+## Key Files
+
+- `@src/lib/utils.js`: UI and animation utilities
+- `@src/lib/islands.js`: Component loading and hydration
