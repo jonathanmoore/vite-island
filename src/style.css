@@ -25,24 +25,7 @@
     format("woff2-variations");
 }
 
-@font-face {
-  font-family: "ABCWhyteInktrap";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/fonts/ABCWhyteInktrap-Bold.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "ABCWhyteInktrap";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/fonts/ABCWhyteInktrap-Regular.woff2") format("woff2");
-}
-
 @theme {
   --font-display: "Inter", sans-serif;
   --font-mono: "Geist Mono", monospace;
-  --font-heading: "ABCWhyteInktrap", sans-serif;
 }

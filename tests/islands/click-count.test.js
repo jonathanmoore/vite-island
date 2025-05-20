@@ -1,14 +1,14 @@
 import { describe, it, expect, beforeEach, vi, afterEach } from "vitest";
-import { scrambleText, slideText } from "../lib/utils.js";
+import { scrambleText, slideText } from "@/lib/utils.js";
 
 // First mock the animations before importing the component
-vi.mock("../lib/utils.js", () => ({
+vi.mock("@/lib/utils.js", () => ({
   scrambleText: vi.fn().mockResolvedValue(undefined),
   slideText: vi.fn().mockResolvedValue(undefined),
 }));
 
 // Now import the component so it uses our mocks
-import "./click-count.js";
+import "@/islands/click-count.js";
 
 describe("ClickCount Component", () => {
   let counter;
