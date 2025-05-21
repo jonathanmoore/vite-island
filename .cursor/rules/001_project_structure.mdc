@@ -30,6 +30,73 @@ This project follows the Islands Architecture pattern, which focuses on isolated
 - Tailwind CSS v4 for styling through `@tailwindcss/vite` plugin
 - Vitest + JSDOM for component testing
 
+### CSS Styling
+
+- Always prefer and use Tailwind CSS classes
+- Make use of the attribute selectors for classes
+
+```html
+<!-- Will apply -->
+<div data-active class="border border-gray-300 data-active:border-purple-500">
+  <!-- ... -->
+</div>
+<!-- Will not apply -->
+<div class="border border-gray-300 data-active:border-purple-500">
+  <!-- ... -->
+</div>
+```
+- Assign CSS variables via JS or html tags to compontents to access in styles
+```html
+<ul class="list-image-(--my-list-image)">
+  <!-- ... -->
+</ul>
+```
+- Use CSS classes for grouping
+```html
+<div class="group ...">
+  <img src="..." />
+  <h4>Spencer Sharp</h4>
+  <svg class="hidden group-has-[a]:block ..."><!-- ... --></svg>
+  <p>Product Designer at <a href="...">planeteria.tech</a></p>
+</div>
+
+<ul role="list">
+  {#each people as person}
+    <li class="group/item ...">
+      <!-- ... -->
+      <a class="group/edit invisible group-hover/item:visible ..." href="tel:{person.phone}">
+        <span class="group-hover/edit:text-gray-700 ...">Call</span>
+        <svg class="group-hover/edit:translate-x-0.5 group-hover/edit:text-gray-500 ..."><!-- ... --></svg>
+      </a>
+    </li>
+  {/each}
+</ul>
+
+<div class="group is-published">
+  <div class="hidden group-[.is-published]:block">
+    Published
+  </div>
+</div>
+```
+- When needed target siblings using the Tailwind [&_] structure
+```html
+<div class="mb-10 [&_ul]:list-inside [&_ul]:list-disc [&_ul]:text-red-500">
+  <ul>
+    <li></li>
+  </ul>
+</div>
+```
+- Style children based on classes or attributes that belong to the parent container
+```html
+<div data-zoom-level="1">
+ <div class="hidden [[data-zoom-level='1']_&]:block"></div>
+</div>
+
+<div class="active">
+  <div class="hidden [.active_&]:block"></div>
+</div>
+```
+
 ## Key Files
 
 - `@src/main.js`: Application entry point that initializes island components

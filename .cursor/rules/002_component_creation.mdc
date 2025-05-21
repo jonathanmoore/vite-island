@@ -1,7 +1,7 @@
 ---
 description: 
-globs: src/islands/**/*,tests/islands/**/*
-alwaysApply: false
+globs: 
+alwaysApply: true
 ---
 # Component Creation Workflow
 

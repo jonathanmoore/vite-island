@@ -1,7 +1,7 @@
 ---
 description: 
-globs: src/lib/**/*.js
-alwaysApply: false
+globs: 
+alwaysApply: true
 ---
 # Utility and Shared Code Standards
 

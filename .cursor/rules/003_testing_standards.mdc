@@ -1,7 +1,7 @@
 ---
 description: 
-globs: tests/**/*
-alwaysApply: false
+globs: 
+alwaysApply: true
 ---
 # Component Testing Standards
 

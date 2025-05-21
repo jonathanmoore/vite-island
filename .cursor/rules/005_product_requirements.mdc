@@ -1,7 +1,7 @@
 ---
 description: 
-globs: .ai/PLAN.md
-alwaysApply: false
+globs: 
+alwaysApply: true
 ---
 # Project Plan Documentation
 
