@@ -31,6 +31,94 @@ See the `@src/islands/click-count.js` file for a reference template on:
 - Event handling
 - Custom event dispatch
 
+## JS Structure Boilerplate
+
+```js
+// Import utilities if needed
+import { utilityFunction } from "../lib/utils.js";
+
+class ComponentName extends HTMLElement {
+  // Define which attributes to observe for changes
+  static get observedAttributes() {
+    return ['state', 'theme'];
+  }
+  
+  constructor() {
+    super();
+    // Initialize component state
+    this.count = 0;
+    this.animationQueue = Promise.resolve();
+    console.log("ComponentName loaded");
+  }
+
+  async connectedCallback() {
+    // Find elements within the component
+    this.buttonElement = this.querySelector("button");
+    this.contentElement = this.querySelector("[data-content]");
+    
+    // Set initial states
+    this.dataset.active = "false";
+    
+    // Initialize and activate
+    await utilityFunction(this.contentElement, "Initial content");
+    this.dataset.active = "true";
+    
+    // Attach event listeners
+    this.buttonElement?.addEventListener("click", this.handleClick.bind(this));
+  }
+
+  // Called when observed attributes change
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (oldValue === newValue) return;
+    
+    console.log(`Attribute ${name} changed from ${oldValue} to ${newValue}`);
+    
+    // Handle specific attribute changes
+    switch (name) {
+      case 'state':
+        this.updateDisplay();
+        break;
+      case 'theme':
+        this.applyTheme(newValue);
+        break;
+    }
+  }
+
+  handleClick() {
+    // Update state
+    this.count++;
+    
+    // Dispatch custom event
+    this.dispatchEvent(
+      new CustomEvent("state-changed", {
+        detail: { count: this.count },
+        bubbles: true,
+      })
+    );
+    
+    // Update display
+    this.updateDisplay();
+  }
+
+  async updateDisplay() {
+    if (this.contentElement) {
+      // Update content based on state
+      this.contentElement.textContent = this.count;
+    }
+  }
+
+  disconnectedCallback() {
+    // Clean up event listeners
+    this.buttonElement?.removeEventListener("click", this.handleClick.bind(this));
+  }
+}
+
+// Register the component
+if (!customElements.get("component-name")) {
+  customElements.define("component-name", ComponentName);
+}
+```
+
 ## Integration
 
 All components are automatically discovered and registered by the `@src/lib/islands.js` system
